@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# firebase
+.firebaserc
+firestore.rules
+if
+
 # testing
 /coverage
 
