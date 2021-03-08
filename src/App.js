@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import './App.css';
-
+import { Notifications } from 'react-push-notification';
 import { HomePage } from './pages/homepage/homepage.component';
 import { ShopPage } from './pages/shop/shoppage.component'; 
 import { SignInAndSignUp } from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
@@ -54,6 +54,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Notifications />
         <Header user={ this.state.currentUser } />
         <Switch>
           <Route exact path='/' component={ HomePage } />

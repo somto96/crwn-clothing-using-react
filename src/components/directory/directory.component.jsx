@@ -4,6 +4,7 @@ import { Menuitem } from '../menu-item/menu-item.component';
 // import { Gender } from '../menu-item/menu-item-gender.component';
 
 import './directory.styles.scss';
+import addNotification from 'react-push-notification';
 
 export class Directory extends Component {
     constructor() {
@@ -46,17 +47,33 @@ export class Directory extends Component {
         }
     }
 
+    notif(){
+        return addNotification({
+            title: 'Warning',
+            subtitle: 'This is a subtitle',
+            message: 'This is a very long message',
+            theme: 'darkblue',
+            native: false // when using native, your OS will handle theming.
+        });
+    }
+
     render() {
+       
         return (
+
             <div className="directory-menu">
-                
+
                 {
-                   
+
                     this.state.sections.map(({ title, id, imageUrl, size }) => (
 
                         <Menuitem key={id} title={title} imageUrl={imageUrl} size={size} />
                     ))
                 }
+                <div>
+                    {/* { this.notif() } */}
+                </div>
+
             </div>
         )
     }
